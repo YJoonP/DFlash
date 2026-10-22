@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "pid": 3450231,
+  "thinking": true,
+  "started": "2026-10-13 17:36:16",
+  "thermal": {
+    "soc_mC": 27800,
+    "battery_dC": 213,
+    "battery_pct": 93,
+    "charge_counter_uAh": 4690000,
+    "busy": []
+  },
+  "current": "main_R16v3_483_run",
+  "minimum_inter_run_rest_seconds": 60,
+  "tag": "main"
+}

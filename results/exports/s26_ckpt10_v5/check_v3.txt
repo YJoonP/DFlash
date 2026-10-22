@@ -1,0 +1,5 @@
+S1 state input dequantizes on the input Q encoding: 96/96
+S2 ingredient chains on a single encoding: 1152/1152
+S3 query row slices on the group encoding: 192/192
+S4 checkpoint outputs exactly on the state input encoding: 96/96
+PASS

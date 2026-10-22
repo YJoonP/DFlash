@@ -1,0 +1,95 @@
+call-count check (run, steps, decode verify calls, stale): all ok
+== K16off: prompts [161, 162, 163, 241, 242, 243, 321, 322, 323, 401, 402, 403, 481, 482, 483, 81, 82, 83], 440 steps, 5.20 tok/step | step 89.03 ms = draft 17.15 + verify 71.88
+   verify | shard input prep (runner)                                  0.11
+   verify | graph execute call (runner-timed)                         70.78
+   verify | shard output handling (runner)                             0.78
+   verify | KV write-back (runner)                                     0.05
+   verify | rest of verify (driver, acceptance, state select, ...)     0.17
+   graph  | NPU compute excl. wait (3012)                             67.12
+   graph  | NPU wait inside execute (3004-3012)                        0.99
+   graph  | NPU-side call overhead (3002-3004)                         1.36
+   graph  | CPU<->NPU RPC overhead (3001-3002)                         0.89
+   graph  | QNN CPU-side work incl. RAW copies (400-3001)              0.22
+   graph  | loader around QNN execute (exec-400)                       0.20
+   snap   | staging                                                    0.00
+   snap   | register                                                   0.00
+   snap   | deregister                                                 0.00
+   shard exec          :  4.39  7.59  7.48  7.49  7.48  7.57  7.59  7.52 13.67
+   shard npu_excl_wait :  3.75  7.27  7.15  7.17  7.16  7.24  7.27  7.19 12.93
+   shard qnn_cpu_work  :  0.02  0.03  0.03  0.03  0.02  0.02  0.02  0.02  0.02
+   shard post          :  0.12  0.11  0.10  0.09  0.09  0.09  0.09  0.09  0.00
+== K16on: prompts [161, 162, 163, 241, 242, 243, 321, 322, 323, 401, 402, 403, 481, 482, 483, 81, 82, 83], 440 steps, 5.20 tok/step | step 88.94 ms = draft 17.07 + verify 71.87
+   verify | shard input prep (runner)                                  0.12
+   verify | graph execute call (runner-timed)                         70.75
+   verify | shard output handling (runner)                             0.78
+   verify | KV write-back (runner)                                     0.05
+   verify | rest of verify (driver, acceptance, state select, ...)     0.17
+   graph  | NPU compute excl. wait (3012)                             67.05
+   graph  | NPU wait inside execute (3004-3012)                        0.99
+   graph  | NPU-side call overhead (3002-3004)                         1.36
+   graph  | CPU<->NPU RPC overhead (3001-3002)                         0.90
+   graph  | QNN CPU-side work incl. RAW copies (400-3001)              0.22
+   graph  | loader around QNN execute (exec-400)                       0.22
+   snap   | staging                                                    0.00
+   snap   | register                                                   0.00
+   snap   | deregister                                                 0.00
+   shard exec          :  4.38  7.57  7.47  7.50  7.49  7.57  7.59  7.52 13.66
+   shard npu_excl_wait :  3.74  7.24  7.14  7.17  7.16  7.24  7.27  7.18 12.92
+   shard qnn_cpu_work  :  0.02  0.03  0.03  0.03  0.02  0.02  0.02  0.02  0.02
+   shard post          :  0.11  0.11  0.10  0.10  0.09  0.09  0.09  0.09  0.00
+== R16v3: prompts [161, 162, 163, 241, 242, 243, 321, 322, 323, 401, 402, 403, 481, 482, 483, 81, 82, 83], 443 steps, 5.16 tok/step | step 92.83 ms = draft 17.28 + verify 75.55
+   verify | shard input prep (runner)                                  0.10
+   verify | graph execute call (runner-timed)                         74.46
+   verify | shard output handling (runner)                             0.77
+   verify | KV write-back (runner)                                     0.04
+   verify | rest of verify (driver, acceptance, state select, ...)     0.17
+   graph  | NPU compute excl. wait (3012)                             71.01
+   graph  | NPU wait inside execute (3004-3012)                        0.97
+   graph  | NPU-side call overhead (3002-3004)                         1.22
+   graph  | CPU<->NPU RPC overhead (3001-3002)                         0.90
+   graph  | QNN CPU-side work incl. RAW copies (400-3001)              0.20
+   graph  | loader around QNN execute (exec-400)                       0.17
+   snap   | staging                                                    0.00
+   snap   | register                                                   0.00
+   snap   | deregister                                                 0.00
+   shard exec          :  5.06  7.93  7.89  7.85  8.13  7.81  7.82  8.22 13.75
+   shard npu_excl_wait :  4.43  7.63  7.59  7.56  7.83  7.51  7.52  7.92 13.02
+   shard qnn_cpu_work  :  0.02  0.03  0.02  0.02  0.02  0.02  0.02  0.02  0.02
+   shard post          :  0.13  0.11  0.09  0.09  0.09  0.09  0.09  0.09  0.00
+== R16v5: prompts [161, 162, 163, 241, 242, 243, 321, 322, 323, 401, 402, 403, 481, 482, 483, 81, 82, 83], 440 steps, 5.20 tok/step | step 89.33 ms = draft 17.15 + verify 72.18
+   verify | shard input prep (runner)                                  0.10
+   verify | graph execute call (runner-timed)                         71.11
+   verify | shard output handling (runner)                             0.76
+   verify | KV write-back (runner)                                     0.05
+   verify | rest of verify (driver, acceptance, state select, ...)     0.18
+   graph  | NPU compute excl. wait (3012)                             67.68
+   graph  | NPU wait inside execute (3004-3012)                        0.96
+   graph  | NPU-side call overhead (3002-3004)                         1.21
+   graph  | CPU<->NPU RPC overhead (3001-3002)                         0.89
+   graph  | QNN CPU-side work incl. RAW copies (400-3001)              0.20
+   graph  | loader around QNN execute (exec-400)                       0.17
+   snap   | staging                                                    0.00
+   snap   | register                                                   0.00
+   snap   | deregister                                                 0.00
+   shard exec          :  4.34  7.75  7.65  7.51  7.61  7.67  7.60  7.49 13.48
+   shard npu_excl_wait :  3.71  7.45  7.36  7.21  7.32  7.38  7.31  7.20 12.74
+   shard qnn_cpu_work  :  0.02  0.03  0.02  0.02  0.02  0.02  0.02  0.02  0.02
+   shard post          :  0.12  0.10  0.09  0.09  0.09  0.09  0.09  0.09  0.00
+
+| Tree Size | Method | Verification Latency (ms) | Drafting Latency (ms) | AL | TPS (token/sec) | Speedup (×AR) | prompts |
+|---|---|---|---|---|---|---|---|
+| b = 16 | AR (S26 10-13) | 49.81 (토큰당) | – | 1.00 | 20.07 | 1.00× | 18 |
+| b = 16 | 저장 방식 (전부 고정, S26 main 세션) | 80.68 | 18.78 | 5.097 | 50.73 | 2.53× | 18 |
+| b = 16 | 재계산 v3 (conv 창 수정 있음) | 75.55 | 17.28 | 5.201 | 55.45 | 2.76× | 18 |
+| b = 16 | 재계산 v5 (conv 창 수정 없음) | 72.18 | 17.15 | 5.236 | 58.02 | 2.89× | 18 |
+| b = 16 | ckpt10 v5, 체크포인트 끔 | 71.88 | 17.15 | 5.236 | 58.20 | 2.90× | 18 |
+| b = 16 | ckpt10 v5, 10행 상태에서 이어서 | 71.87 | 17.07 | 5.236 | 58.27 | 2.90× | 18 |
+
+checkpoint use (all target calls incl. prompt; rows = committed rows):
+  K16on: calls 740, from the row-10 state 364 (49.2%), rows committed from the committed state 1203, rows committed after the checkpoint 1986
+
+token identity:
+  K16on vs K16off (checkpoint on vs off, same export (must be identical)): 18/18 identical
+  K16off vs R16v5 (ckpt10 v5 vs plain recompute v5 (separate exports, must be identical)): 18/18 identical
+  R16v5 vs R16v3 (v5 vs v3 (conv path differs: not expected identical)): 5/18 identical (differ: [81, 82, 83, 163, 242, 243, 321, 322, 323, 401, 402, 481, 483])
+  K16on vs S16 (ckpt10 vs snapshot): 2/18 identical (differ: [81, 82, 83, 161, 162, 163, 241, 242, 243, 321, 323, 401, 402, 481, 482, 483])

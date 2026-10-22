@@ -1,0 +1,52 @@
+call-count check (run, steps, decode verify calls, stale): all ok
+== R16: prompts [161, 162, 163, 241, 242, 243, 321, 322, 323, 401, 402, 403, 481, 482, 483, 81, 82, 83], 449 steps, 5.09 tok/step | step 94.11 ms = draft 17.99 + verify 76.12
+   verify | shard input prep (runner)                                  0.13
+   verify | graph execute call (runner-timed)                         74.75
+   verify | shard output handling (runner)                             0.99
+   verify | KV write-back (runner)                                     0.05
+   verify | rest of verify (driver, acceptance, state select, ...)     0.20
+   graph  | NPU compute excl. wait (3012)                             71.15
+   graph  | NPU wait inside execute (3004-3012)                        0.98
+   graph  | NPU-side call overhead (3002-3004)                         1.25
+   graph  | CPU<->NPU RPC overhead (3001-3002)                         0.87
+   graph  | QNN CPU-side work incl. RAW copies (400-3001)              0.24
+   graph  | loader around QNN execute (exec-400)                       0.25
+   snap   | staging                                                    0.00
+   snap   | register                                                   0.00
+   snap   | deregister                                                 0.00
+   shard exec          :  5.39  8.01  8.01  7.82  7.99  8.03  7.84  8.12 13.55
+   shard npu_excl_wait :  4.74  7.69  7.67  7.50  7.67  7.72  7.53  7.80 12.83
+   shard qnn_cpu_work  :  0.02  0.03  0.03  0.03  0.03  0.03  0.03  0.03  0.02
+   shard post          :  0.14  0.14  0.13  0.12  0.12  0.11  0.11  0.11  0.00
+== S16: prompts [161, 162, 163, 241, 242, 243, 321, 322, 323, 401, 402, 403, 481, 482, 483, 81, 82, 83], 452 steps, 5.06 tok/step | step 99.46 ms = draft 18.78 + verify 80.68
+   verify | shard input prep (runner)                                  0.09
+   verify | graph execute call (runner-timed)                         78.03
+   verify | shard output handling (runner)                             0.93
+   verify | KV write-back (runner)                                     0.05
+   verify | rest of verify (driver, acceptance, state select, ...)     1.58
+   graph  | NPU compute excl. wait (3012)                             72.49
+   graph  | NPU wait inside execute (3004-3012)                        1.09
+   graph  | NPU-side call overhead (3002-3004)                         1.04
+   graph  | CPU<->NPU RPC overhead (3001-3002)                         1.18
+   graph  | QNN CPU-side work incl. RAW copies (400-3001)              0.21
+   graph  | loader around QNN execute (exec-400)                       2.02
+   snap   | staging                                                    1.81
+   snap   | select                                                     1.38
+   snap   | register                                                   0.00
+   snap   | deregister                                                 0.00
+   shard exec          :  5.14  8.56  8.32  8.23  8.97  8.24  8.24  8.23 14.10
+   shard npu_excl_wait :  4.45  8.06  7.83  7.74  8.12  7.77  7.77  7.75 13.01
+   shard qnn_cpu_work  :  0.02  0.03  0.03  0.02  0.02  0.02  0.02  0.02  0.02
+   shard post          :  0.13  0.13  0.12  0.11  0.11  0.11  0.11  0.11  0.00
+
+| Tree Size | Method | Verification Latency (ms) | Drafting Latency (ms) | AL | TPS (token/sec) | Speedup (×AR) | prompts |
+|---|---|---|---|---|---|---|---|
+| b = 8 | AR (S25 10-05, S26 not measured) | 56.14 (토큰당) | – | 1.00 | 17.81 | 1.00× | 18 |
+| b = 16 | AR (S25 10-05, S26 not measured) | 55.90 (토큰당) | – | 1.00 | 17.89 | 1.00× | 18 |
+| b = 16 | 저장 방식 (전부 고정) | 80.68 | 18.78 | 5.097 | 50.73 | 2.84× | 18 |
+| b = 16 | 재계산 (새 export, 16bit 재료 입출력 + 등록 메모리) | 76.12 | 17.99 | 5.131 | 53.96 | 3.02× | 18 |
+
+token identity:
+  (가) b = 16: recompute (u16 IO) vs snapshot, this session: 3/18 identical (differ: [81, 83, 161, 162, 163, 241, 242, 243, 321, 322, 323, 401, 402, 482, 483])
+  R16 vs 10-11 exact v1 (before the conv fix): 6/18 identical (differ: [81, 83, 163, 241, 243, 321, 322, 323, 401, 402, 481, 483])
+  S16 vs 10-10 snapshot runs (float logits path): 18/18 identical

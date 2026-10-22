@@ -1,0 +1,38 @@
+call-count check (run, steps, decode verify calls, stale): all ok
+== K16on: prompts [101, 121, 141, 161, 401, 81], 155 steps, 4.92 tok/step | step 90.33 ms = draft 18.44 + verify 71.89
+   verify | shard input prep (runner)                                  0.12
+   verify | graph execute call (runner-timed)                         70.76
+   verify | shard output handling (runner)                             0.80
+   verify | KV write-back (runner)                                     0.05
+   verify | rest of verify (driver, acceptance, state select, ...)     0.17
+   graph  | NPU compute excl. wait (3012)                             67.10
+   graph  | NPU wait inside execute (3004-3012)                        0.99
+   graph  | NPU-side call overhead (3002-3004)                         1.36
+   graph  | CPU<->NPU RPC overhead (3001-3002)                         0.88
+   graph  | QNN CPU-side work incl. RAW copies (400-3001)              0.21
+   graph  | loader around QNN execute (exec-400)                       0.22
+   snap   | staging                                                    0.00
+   snap   | register                                                   0.00
+   snap   | deregister                                                 0.00
+   shard exec          :  4.34  7.56  7.41  7.49  7.47  7.54  7.63  7.51 13.80
+   shard npu_excl_wait :  3.71  7.24  7.09  7.16  7.14  7.21  7.30  7.18 13.06
+   shard qnn_cpu_work  :  0.02  0.03  0.03  0.03  0.02  0.02  0.02  0.02  0.02
+   shard post          :  0.11  0.12  0.11  0.10  0.09  0.09  0.09  0.09  0.00
+
+== K16on per prompt (thinking template, greedy, 128 tokens; TPS = (tokens - 1) / decode time)
+| question_id | 분야 | 프롬프트 토큰 | 검증 횟수 | AL | 검증 (ms) | 초안 (ms) | TPS (tok/s) | 배속 (×AR 20.07) | 시작 (KST) | SoC 시작 °C |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 81 | Writing | 32 | 23 | 5.565 | 72.67 | 18.77 | 60.30 | 3.00× | 22:24 | 24.7 |
+| 101 | Reasoning | 48 | 20 | 6.400 | 73.19 | 18.52 | 69.13 | 3.44× | 22:25 | 25.4 |
+| 121 | Coding | 36 | 27 | 4.741 | 71.75 | 18.30 | 52.16 | 2.60× | 22:27 | 35.9 |
+| 141 | STEM | 36 | 25 | 5.120 | 71.41 | 18.53 | 56.39 | 2.81× | 22:28 | 26.2 |
+| 161 | Translation | 35 | 35 | 3.657 | 71.58 | 18.58 | 40.19 | 2.00× | 22:29 | 26.2 |
+| 401 | Math reasoning | 65 | 25 | 5.120 | 71.22 | 17.92 | 56.90 | 2.84× | 22:30 | 26.6 |
+| 전체 (6) | – | – | 155 | 4.955 | 71.89 | 18.44 | 54.34 | 2.71× | | |
+AR per prompt (10-13, same prompts only): 81 19.66, 161 20.10, 401 20.06
+
+K16on tokens vs 10-13 K16on: 3/3 identical ([81, 161, 401])
+  81: TPS 60.30 vs 62.07, verify 72.67 vs 72.48 ms, draft 18.77 vs 16.38 ms
+  161: TPS 40.19 vs 41.54, verify 71.58 vs 70.74 ms, draft 18.58 vs 16.47 ms
+  401: TPS 56.90 vs 57.91, verify 71.22 vs 71.11 ms, draft 17.92 vs 16.49 ms
+decoded outputs: outputs_main_K16on.txt

@@ -1,0 +1,3 @@
+S1 state input dequantizes on the input Q encoding: 96/96
+S2 ingredient chains on a single encoding: 768/768
+PASS

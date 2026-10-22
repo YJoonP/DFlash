@@ -1,0 +1,19 @@
+S26 AR (kv_forward, qnn_llama_runner, 10-05 method): 18 prompts, 2286 decode tokens, 49.81 ms per token, 20.07 tok/s (pooled); per-prompt tok/s mean 20.08
+  161: 20.10 tok/s, 49.74 ms/token, 127 tokens
+  162: 20.11 tok/s, 49.72 ms/token, 127 tokens
+  163: 20.27 tok/s, 49.34 ms/token, 127 tokens
+  241: 20.16 tok/s, 49.61 ms/token, 127 tokens
+  242: 20.11 tok/s, 49.72 ms/token, 127 tokens
+  243: 20.16 tok/s, 49.61 ms/token, 127 tokens
+  321: 20.21 tok/s, 49.47 ms/token, 127 tokens
+  322: 20.12 tok/s, 49.71 ms/token, 127 tokens
+  323: 20.25 tok/s, 49.39 ms/token, 127 tokens
+  401: 20.06 tok/s, 49.84 ms/token, 127 tokens
+  402: 20.19 tok/s, 49.53 ms/token, 127 tokens
+  403: 20.16 tok/s, 49.61 ms/token, 127 tokens
+  481: 20.09 tok/s, 49.79 ms/token, 127 tokens
+  482: 20.01 tok/s, 49.97 ms/token, 127 tokens
+  483: 19.99 tok/s, 50.02 ms/token, 127 tokens
+  81: 19.66 tok/s, 50.86 ms/token, 127 tokens
+  82: 19.98 tok/s, 50.05 ms/token, 127 tokens
+  83: 19.73 tok/s, 50.69 ms/token, 127 tokens

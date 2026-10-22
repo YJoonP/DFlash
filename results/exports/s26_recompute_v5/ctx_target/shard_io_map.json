@@ -1,0 +1,4276 @@
+{
+ "snapshot_format": 1,
+ "snapshot_groups": {},
+ "method": "prefill_forward",
+ "state_snapshots": false,
+ "verify_ar_len": 16,
+ "shards": [
+  {
+   "shard": 0,
+   "inputs": {
+    "input_0_args_32@0": {
+     "role": "state_rec:0",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_1_args_33@0": {
+     "role": "state_rec:1",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_2_args_0@0": {
+     "role": "state_conv:0",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_3_args_65@0": {
+     "role": "ing_x:0",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_4_args_66@0": {
+     "role": "ing_k:0",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_5_args_67@0": {
+     "role": "ing_v:0",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_6_args_68@0": {
+     "role": "ing_beta:0",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_7_args_69@0": {
+     "role": "ing_decay:0",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_8_args_1@0": {
+     "role": "state_conv:1",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_9_args_70@0": {
+     "role": "ing_x:1",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_10_args_71@0": {
+     "role": "ing_k:1",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_11_args_72@0": {
+     "role": "ing_v:1",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_12_args_73@0": {
+     "role": "ing_beta:1",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_13_args_74@0": {
+     "role": "ing_decay:1",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_14_tokens@0": {
+     "role": "tokens",
+     "dims": [
+      1,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_15_args_186@0": {
+     "role": "conv_idx_prev",
+     "dims": [
+      3
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_16_args_64@0": {
+     "role": "valid_prev",
+     "dims": [
+      1,
+      16,
+      1,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_17_args_185@0": {
+     "role": "valid_cur",
+     "dims": [
+      1,
+      16,
+      1,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    }
+   },
+   "outputs": {
+    "output_order_0_aten__to_copy_default_2@0": {
+     "role": "state_conv:0",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_1_aten__to_copy_default_3@0": {
+     "role": "state_conv:1",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_2_aten_cat_default_1@0": {
+     "role": "state_rec:0",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_3_aten_cat_default_5@0": {
+     "role": "state_rec:1",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_4_aten_permute_copy_default_8@0": {
+     "role": "ing_x:0",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_5_aten_unsqueeze_copy_default_3@0": {
+     "role": "ing_beta:0",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_6_aten_unsqueeze_copy_default_4@0": {
+     "role": "ing_decay:0",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_7_aten_view_copy_default_31@0": {
+     "role": "ing_v:0",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_8_aten_div_tensor_3@0": {
+     "role": "ing_k:0",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_9_aten_permute_copy_default_22@0": {
+     "role": "ing_x:1",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_10_aten_unsqueeze_copy_default_8@0": {
+     "role": "ing_beta:1",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_11_aten_unsqueeze_copy_default_9@0": {
+     "role": "ing_decay:1",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_12_aten_view_copy_default_50@0": {
+     "role": "ing_v:1",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_13_aten_div_tensor_7@0": {
+     "role": "ing_k:1",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_14_aten_add_tensor_13@0": {
+     "role": "hidden_out",
+     "dims": [
+      1,
+      16,
+      2560
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    }
+   }
+  },
+  {
+   "shard": 1,
+   "inputs": {
+    "input_0_args_34@0": {
+     "role": "state_rec:2",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_1_args_36@0": {
+     "role": "state_rec:4",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_2_args_37@0": {
+     "role": "state_rec:5",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_3_args_2@0": {
+     "role": "state_conv:2",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_4_args_75@0": {
+     "role": "ing_x:2",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_5_args_76@0": {
+     "role": "ing_k:2",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_6_args_77@0": {
+     "role": "ing_v:2",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_7_args_78@0": {
+     "role": "ing_beta:2",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_8_args_79@0": {
+     "role": "ing_decay:2",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_9_args_4@0": {
+     "role": "state_conv:4",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_10_args_80@0": {
+     "role": "ing_x:4",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_11_args_81@0": {
+     "role": "ing_k:4",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_12_args_82@0": {
+     "role": "ing_v:4",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_13_args_83@0": {
+     "role": "ing_beta:4",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_14_args_84@0": {
+     "role": "ing_decay:4",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_15_args_5@0": {
+     "role": "state_conv:5",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_16_args_85@0": {
+     "role": "ing_x:5",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_17_args_86@0": {
+     "role": "ing_k:5",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_18_args_87@0": {
+     "role": "ing_v:5",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_19_args_88@0": {
+     "role": "ing_beta:5",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_20_args_89@0": {
+     "role": "ing_decay:5",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_21_input_pos@0": {
+     "role": "pos",
+     "dims": [
+      1,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_22_atten_mask@0": {
+     "role": "mask",
+     "dims": [
+      1,
+      1,
+      16,
+      1024
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_23_args_186@0": {
+     "role": "conv_idx_prev",
+     "dims": [
+      3
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_24_args_64@0": {
+     "role": "valid_prev",
+     "dims": [
+      1,
+      16,
+      1,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_25_llama_fallback_default@0": {
+     "role": "hidden_in",
+     "dims": [
+      1,
+      16,
+      2560
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_26_args_185@0": {
+     "role": "valid_cur",
+     "dims": [
+      1,
+      16,
+      1,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_27_args_35@0": {
+     "role": "kv_v:3",
+     "dims": [
+      1,
+      4,
+      1008,
+      256
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "input_28_args_3@0": {
+     "role": "kv_k:3",
+     "dims": [
+      1,
+      4,
+      256,
+      1008
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    }
+   },
+   "outputs": {
+    "output_order_0_aten__to_copy_default@0": {
+     "role": "state_conv:2",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_1_aten__to_copy_default_5@0": {
+     "role": "state_conv:4",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_2_aten__to_copy_default_6@0": {
+     "role": "state_conv:5",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_3_quantized_decomposed_dequantize_per_tensor_default@0": {
+     "role": "link:209",
+     "dims": [
+      16,
+      32
+     ],
+     "dtype": "QNN_DATATYPE_FLOAT_32"
+    },
+    "output_order_4_quantized_decomposed_dequantize_per_tensor_default_179@0": {
+     "role": "link:210",
+     "dims": [
+      16,
+      32
+     ],
+     "dtype": "QNN_DATATYPE_FLOAT_32"
+    },
+    "output_order_5_aten_cat_default_9@0": {
+     "role": "state_rec:2",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_6_aten_cat_default_19@0": {
+     "role": "state_rec:4",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_7_aten_cat_default_23@0": {
+     "role": "state_rec:5",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_8_aten_permute_copy_default_36@0": {
+     "role": "ing_x:2",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_9_aten_unsqueeze_copy_default_13@0": {
+     "role": "ing_beta:2",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_10_aten_unsqueeze_copy_default_14@0": {
+     "role": "ing_decay:2",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_11_aten_view_copy_default_69@0": {
+     "role": "ing_v:2",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_12_aten_div_tensor_11@0": {
+     "role": "ing_k:2",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_13_aten_permute_copy_default_48@0": {
+     "role": "kv_v:3",
+     "dims": [
+      1,
+      4,
+      16,
+      256
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "output_order_14_aten_permute_copy_default_49@0": {
+     "role": "kv_k:3",
+     "dims": [
+      1,
+      4,
+      256,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "output_order_15_aten_permute_copy_default_63@0": {
+     "role": "ing_x:4",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_16_aten_unsqueeze_copy_default_28@0": {
+     "role": "ing_beta:4",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_17_aten_unsqueeze_copy_default_29@0": {
+     "role": "ing_decay:4",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_18_aten_view_copy_default_100@0": {
+     "role": "ing_v:4",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_19_aten_div_tensor_16@0": {
+     "role": "ing_k:4",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_20_aten_permute_copy_default_77@0": {
+     "role": "ing_x:5",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_21_aten_unsqueeze_copy_default_33@0": {
+     "role": "ing_beta:5",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_22_aten_unsqueeze_copy_default_34@0": {
+     "role": "ing_decay:5",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_23_aten_view_copy_default_119@0": {
+     "role": "ing_v:5",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_24_aten_div_tensor_20@0": {
+     "role": "ing_k:5",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_25_aten_add_tensor_39@0": {
+     "role": "hidden_out",
+     "dims": [
+      1,
+      16,
+      2560
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    }
+   }
+  },
+  {
+   "shard": 2,
+   "inputs": {
+    "input_0_args_38@0": {
+     "role": "state_rec:6",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_1_args_40@0": {
+     "role": "state_rec:8",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_2_args_41@0": {
+     "role": "state_rec:9",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_3_args_6@0": {
+     "role": "state_conv:6",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_4_args_90@0": {
+     "role": "ing_x:6",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_5_args_91@0": {
+     "role": "ing_k:6",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_6_args_92@0": {
+     "role": "ing_v:6",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_7_args_93@0": {
+     "role": "ing_beta:6",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_8_args_94@0": {
+     "role": "ing_decay:6",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_9_args_8@0": {
+     "role": "state_conv:8",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_10_args_95@0": {
+     "role": "ing_x:8",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_11_args_96@0": {
+     "role": "ing_k:8",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_12_args_97@0": {
+     "role": "ing_v:8",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_13_args_98@0": {
+     "role": "ing_beta:8",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_14_args_99@0": {
+     "role": "ing_decay:8",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_15_args_9@0": {
+     "role": "state_conv:9",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_16_args_100@0": {
+     "role": "ing_x:9",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_17_args_101@0": {
+     "role": "ing_k:9",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_18_args_102@0": {
+     "role": "ing_v:9",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_19_args_103@0": {
+     "role": "ing_beta:9",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_20_args_104@0": {
+     "role": "ing_decay:9",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_21_atten_mask@0": {
+     "role": "mask",
+     "dims": [
+      1,
+      1,
+      16,
+      1024
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_22_args_186@0": {
+     "role": "conv_idx_prev",
+     "dims": [
+      3
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_23_args_64@0": {
+     "role": "valid_prev",
+     "dims": [
+      1,
+      16,
+      1,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_24_aten_select_copy_int@0": {
+     "role": "link:209",
+     "dims": [
+      16,
+      32
+     ],
+     "dtype": "QNN_DATATYPE_FLOAT_32"
+    },
+    "input_25_aten_select_copy_int_1@0": {
+     "role": "link:210",
+     "dims": [
+      16,
+      32
+     ],
+     "dtype": "QNN_DATATYPE_FLOAT_32"
+    },
+    "input_26_llama_fallback_default_1@0": {
+     "role": "hidden_in",
+     "dims": [
+      1,
+      16,
+      2560
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_27_args_185@0": {
+     "role": "valid_cur",
+     "dims": [
+      1,
+      16,
+      1,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_28_args_39@0": {
+     "role": "kv_v:7",
+     "dims": [
+      1,
+      4,
+      1008,
+      256
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "input_29_args_7@0": {
+     "role": "kv_k:7",
+     "dims": [
+      1,
+      4,
+      256,
+      1008
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    }
+   },
+   "outputs": {
+    "output_order_0_aten__to_copy_default@0": {
+     "role": "state_conv:6",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_1_aten__to_copy_default_8@0": {
+     "role": "state_conv:8",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_2_aten__to_copy_default_9@0": {
+     "role": "state_conv:9",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_3_aten_cat_default_27@0": {
+     "role": "state_rec:6",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_4_aten_cat_default_37@0": {
+     "role": "state_rec:8",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_5_aten_cat_default_41@0": {
+     "role": "state_rec:9",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_6_aten_permute_copy_default_91@0": {
+     "role": "ing_x:6",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_7_aten_unsqueeze_copy_default_38@0": {
+     "role": "ing_beta:6",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_8_aten_unsqueeze_copy_default_39@0": {
+     "role": "ing_decay:6",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_9_aten_view_copy_default_138@0": {
+     "role": "ing_v:6",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_10_aten_div_tensor_24@0": {
+     "role": "ing_k:6",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_11_aten_permute_copy_default_103@0": {
+     "role": "kv_v:7",
+     "dims": [
+      1,
+      4,
+      16,
+      256
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "output_order_12_aten_permute_copy_default_104@0": {
+     "role": "kv_k:7",
+     "dims": [
+      1,
+      4,
+      256,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "output_order_13_aten_permute_copy_default_118@0": {
+     "role": "ing_x:8",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_14_aten_unsqueeze_copy_default_53@0": {
+     "role": "ing_beta:8",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_15_aten_unsqueeze_copy_default_54@0": {
+     "role": "ing_decay:8",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_16_aten_view_copy_default_169@0": {
+     "role": "ing_v:8",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_17_aten_div_tensor_29@0": {
+     "role": "ing_k:8",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_18_aten_permute_copy_default_132@0": {
+     "role": "ing_x:9",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_19_aten_unsqueeze_copy_default_58@0": {
+     "role": "ing_beta:9",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_20_aten_unsqueeze_copy_default_59@0": {
+     "role": "ing_decay:9",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_21_aten_view_copy_default_188@0": {
+     "role": "ing_v:9",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_22_aten_div_tensor_33@0": {
+     "role": "ing_k:9",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_23_aten_add_tensor_65@0": {
+     "role": "hidden_out",
+     "dims": [
+      1,
+      16,
+      2560
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    }
+   }
+  },
+  {
+   "shard": 3,
+   "inputs": {
+    "input_0_args_42@0": {
+     "role": "state_rec:10",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_1_args_44@0": {
+     "role": "state_rec:12",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_2_args_45@0": {
+     "role": "state_rec:13",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_3_args_10@0": {
+     "role": "state_conv:10",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_4_args_105@0": {
+     "role": "ing_x:10",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_5_args_106@0": {
+     "role": "ing_k:10",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_6_args_107@0": {
+     "role": "ing_v:10",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_7_args_108@0": {
+     "role": "ing_beta:10",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_8_args_109@0": {
+     "role": "ing_decay:10",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_9_args_12@0": {
+     "role": "state_conv:12",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_10_args_110@0": {
+     "role": "ing_x:12",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_11_args_111@0": {
+     "role": "ing_k:12",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_12_args_112@0": {
+     "role": "ing_v:12",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_13_args_113@0": {
+     "role": "ing_beta:12",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_14_args_114@0": {
+     "role": "ing_decay:12",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_15_args_13@0": {
+     "role": "state_conv:13",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_16_args_115@0": {
+     "role": "ing_x:13",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_17_args_116@0": {
+     "role": "ing_k:13",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_18_args_117@0": {
+     "role": "ing_v:13",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_19_args_118@0": {
+     "role": "ing_beta:13",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_20_args_119@0": {
+     "role": "ing_decay:13",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_21_atten_mask@0": {
+     "role": "mask",
+     "dims": [
+      1,
+      1,
+      16,
+      1024
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_22_args_186@0": {
+     "role": "conv_idx_prev",
+     "dims": [
+      3
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_23_args_64@0": {
+     "role": "valid_prev",
+     "dims": [
+      1,
+      16,
+      1,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_24_aten_select_copy_int@0": {
+     "role": "link:209",
+     "dims": [
+      16,
+      32
+     ],
+     "dtype": "QNN_DATATYPE_FLOAT_32"
+    },
+    "input_25_aten_select_copy_int_1@0": {
+     "role": "link:210",
+     "dims": [
+      16,
+      32
+     ],
+     "dtype": "QNN_DATATYPE_FLOAT_32"
+    },
+    "input_26_llama_fallback_default_2@0": {
+     "role": "hidden_in",
+     "dims": [
+      1,
+      16,
+      2560
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_27_args_185@0": {
+     "role": "valid_cur",
+     "dims": [
+      1,
+      16,
+      1,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_28_args_43@0": {
+     "role": "kv_v:11",
+     "dims": [
+      1,
+      4,
+      1008,
+      256
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "input_29_args_11@0": {
+     "role": "kv_k:11",
+     "dims": [
+      1,
+      4,
+      256,
+      1008
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    }
+   },
+   "outputs": {
+    "output_order_0_aten__to_copy_default@0": {
+     "role": "state_conv:10",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_1_aten__to_copy_default_11@0": {
+     "role": "state_conv:12",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_2_aten__to_copy_default_12@0": {
+     "role": "state_conv:13",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_3_aten_cat_default_45@0": {
+     "role": "state_rec:10",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_4_aten_cat_default_55@0": {
+     "role": "state_rec:12",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_5_aten_cat_default_59@0": {
+     "role": "state_rec:13",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_6_aten_permute_copy_default_146@0": {
+     "role": "ing_x:10",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_7_aten_unsqueeze_copy_default_63@0": {
+     "role": "ing_beta:10",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_8_aten_unsqueeze_copy_default_64@0": {
+     "role": "ing_decay:10",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_9_aten_view_copy_default_207@0": {
+     "role": "ing_v:10",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_10_aten_div_tensor_37@0": {
+     "role": "ing_k:10",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_11_aten_permute_copy_default_158@0": {
+     "role": "kv_v:11",
+     "dims": [
+      1,
+      4,
+      16,
+      256
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "output_order_12_aten_permute_copy_default_159@0": {
+     "role": "kv_k:11",
+     "dims": [
+      1,
+      4,
+      256,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "output_order_13_aten_permute_copy_default_173@0": {
+     "role": "ing_x:12",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_14_aten_unsqueeze_copy_default_78@0": {
+     "role": "ing_beta:12",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_15_aten_unsqueeze_copy_default_79@0": {
+     "role": "ing_decay:12",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_16_aten_view_copy_default_238@0": {
+     "role": "ing_v:12",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_17_aten_div_tensor_42@0": {
+     "role": "ing_k:12",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_18_aten_permute_copy_default_187@0": {
+     "role": "ing_x:13",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_19_aten_unsqueeze_copy_default_83@0": {
+     "role": "ing_beta:13",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_20_aten_unsqueeze_copy_default_84@0": {
+     "role": "ing_decay:13",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_21_aten_view_copy_default_257@0": {
+     "role": "ing_v:13",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_22_aten_div_tensor_46@0": {
+     "role": "ing_k:13",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_23_aten_add_tensor_91@0": {
+     "role": "hidden_out",
+     "dims": [
+      1,
+      16,
+      2560
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    }
+   }
+  },
+  {
+   "shard": 4,
+   "inputs": {
+    "input_0_args_46@0": {
+     "role": "state_rec:14",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_1_args_48@0": {
+     "role": "state_rec:16",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_2_args_49@0": {
+     "role": "state_rec:17",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_3_args_14@0": {
+     "role": "state_conv:14",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_4_args_120@0": {
+     "role": "ing_x:14",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_5_args_121@0": {
+     "role": "ing_k:14",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_6_args_122@0": {
+     "role": "ing_v:14",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_7_args_123@0": {
+     "role": "ing_beta:14",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_8_args_124@0": {
+     "role": "ing_decay:14",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_9_args_16@0": {
+     "role": "state_conv:16",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_10_args_125@0": {
+     "role": "ing_x:16",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_11_args_126@0": {
+     "role": "ing_k:16",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_12_args_127@0": {
+     "role": "ing_v:16",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_13_args_128@0": {
+     "role": "ing_beta:16",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_14_args_129@0": {
+     "role": "ing_decay:16",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_15_args_17@0": {
+     "role": "state_conv:17",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_16_args_130@0": {
+     "role": "ing_x:17",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_17_args_131@0": {
+     "role": "ing_k:17",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_18_args_132@0": {
+     "role": "ing_v:17",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_19_args_133@0": {
+     "role": "ing_beta:17",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_20_args_134@0": {
+     "role": "ing_decay:17",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_21_atten_mask@0": {
+     "role": "mask",
+     "dims": [
+      1,
+      1,
+      16,
+      1024
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_22_args_186@0": {
+     "role": "conv_idx_prev",
+     "dims": [
+      3
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_23_args_64@0": {
+     "role": "valid_prev",
+     "dims": [
+      1,
+      16,
+      1,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_24_aten_select_copy_int@0": {
+     "role": "link:209",
+     "dims": [
+      16,
+      32
+     ],
+     "dtype": "QNN_DATATYPE_FLOAT_32"
+    },
+    "input_25_aten_select_copy_int_1@0": {
+     "role": "link:210",
+     "dims": [
+      16,
+      32
+     ],
+     "dtype": "QNN_DATATYPE_FLOAT_32"
+    },
+    "input_26_llama_fallback_default_3@0": {
+     "role": "hidden_in",
+     "dims": [
+      1,
+      16,
+      2560
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_27_args_185@0": {
+     "role": "valid_cur",
+     "dims": [
+      1,
+      16,
+      1,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_28_args_47@0": {
+     "role": "kv_v:15",
+     "dims": [
+      1,
+      4,
+      1008,
+      256
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "input_29_args_15@0": {
+     "role": "kv_k:15",
+     "dims": [
+      1,
+      4,
+      256,
+      1008
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    }
+   },
+   "outputs": {
+    "output_order_0_aten__to_copy_default@0": {
+     "role": "state_conv:14",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_1_aten__to_copy_default_14@0": {
+     "role": "state_conv:16",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_2_aten__to_copy_default_15@0": {
+     "role": "state_conv:17",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_3_aten_cat_default_63@0": {
+     "role": "state_rec:14",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_4_aten_cat_default_73@0": {
+     "role": "state_rec:16",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_5_aten_cat_default_77@0": {
+     "role": "state_rec:17",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_6_aten_permute_copy_default_201@0": {
+     "role": "ing_x:14",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_7_aten_unsqueeze_copy_default_88@0": {
+     "role": "ing_beta:14",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_8_aten_unsqueeze_copy_default_89@0": {
+     "role": "ing_decay:14",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_9_aten_view_copy_default_276@0": {
+     "role": "ing_v:14",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_10_aten_div_tensor_50@0": {
+     "role": "ing_k:14",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_11_aten_permute_copy_default_213@0": {
+     "role": "kv_v:15",
+     "dims": [
+      1,
+      4,
+      16,
+      256
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "output_order_12_aten_permute_copy_default_214@0": {
+     "role": "kv_k:15",
+     "dims": [
+      1,
+      4,
+      256,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "output_order_13_aten_permute_copy_default_228@0": {
+     "role": "ing_x:16",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_14_aten_unsqueeze_copy_default_103@0": {
+     "role": "ing_beta:16",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_15_aten_unsqueeze_copy_default_104@0": {
+     "role": "ing_decay:16",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_16_aten_view_copy_default_307@0": {
+     "role": "ing_v:16",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_17_aten_div_tensor_55@0": {
+     "role": "ing_k:16",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_18_aten_permute_copy_default_242@0": {
+     "role": "ing_x:17",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_19_aten_unsqueeze_copy_default_108@0": {
+     "role": "ing_beta:17",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_20_aten_unsqueeze_copy_default_109@0": {
+     "role": "ing_decay:17",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_21_aten_view_copy_default_326@0": {
+     "role": "ing_v:17",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_22_aten_div_tensor_59@0": {
+     "role": "ing_k:17",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_23_aten_add_tensor_117@0": {
+     "role": "hidden_out",
+     "dims": [
+      1,
+      16,
+      2560
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    }
+   }
+  },
+  {
+   "shard": 5,
+   "inputs": {
+    "input_0_args_50@0": {
+     "role": "state_rec:18",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_1_args_52@0": {
+     "role": "state_rec:20",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_2_args_53@0": {
+     "role": "state_rec:21",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_3_args_18@0": {
+     "role": "state_conv:18",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_4_args_135@0": {
+     "role": "ing_x:18",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_5_args_136@0": {
+     "role": "ing_k:18",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_6_args_137@0": {
+     "role": "ing_v:18",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_7_args_138@0": {
+     "role": "ing_beta:18",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_8_args_139@0": {
+     "role": "ing_decay:18",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_9_args_20@0": {
+     "role": "state_conv:20",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_10_args_140@0": {
+     "role": "ing_x:20",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_11_args_141@0": {
+     "role": "ing_k:20",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_12_args_142@0": {
+     "role": "ing_v:20",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_13_args_143@0": {
+     "role": "ing_beta:20",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_14_args_144@0": {
+     "role": "ing_decay:20",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_15_args_21@0": {
+     "role": "state_conv:21",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_16_args_145@0": {
+     "role": "ing_x:21",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_17_args_146@0": {
+     "role": "ing_k:21",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_18_args_147@0": {
+     "role": "ing_v:21",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_19_args_148@0": {
+     "role": "ing_beta:21",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_20_args_149@0": {
+     "role": "ing_decay:21",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_21_atten_mask@0": {
+     "role": "mask",
+     "dims": [
+      1,
+      1,
+      16,
+      1024
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_22_args_186@0": {
+     "role": "conv_idx_prev",
+     "dims": [
+      3
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_23_args_64@0": {
+     "role": "valid_prev",
+     "dims": [
+      1,
+      16,
+      1,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_24_aten_select_copy_int@0": {
+     "role": "link:209",
+     "dims": [
+      16,
+      32
+     ],
+     "dtype": "QNN_DATATYPE_FLOAT_32"
+    },
+    "input_25_aten_select_copy_int_1@0": {
+     "role": "link:210",
+     "dims": [
+      16,
+      32
+     ],
+     "dtype": "QNN_DATATYPE_FLOAT_32"
+    },
+    "input_26_llama_fallback_default_4@0": {
+     "role": "hidden_in",
+     "dims": [
+      1,
+      16,
+      2560
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_27_args_185@0": {
+     "role": "valid_cur",
+     "dims": [
+      1,
+      16,
+      1,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_28_args_51@0": {
+     "role": "kv_v:19",
+     "dims": [
+      1,
+      4,
+      1008,
+      256
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "input_29_args_19@0": {
+     "role": "kv_k:19",
+     "dims": [
+      1,
+      4,
+      256,
+      1008
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    }
+   },
+   "outputs": {
+    "output_order_0_aten__to_copy_default@0": {
+     "role": "state_conv:18",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_1_aten__to_copy_default_17@0": {
+     "role": "state_conv:20",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_2_aten__to_copy_default_18@0": {
+     "role": "state_conv:21",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_3_aten_cat_default_81@0": {
+     "role": "state_rec:18",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_4_aten_cat_default_91@0": {
+     "role": "state_rec:20",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_5_aten_cat_default_95@0": {
+     "role": "state_rec:21",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_6_aten_permute_copy_default_256@0": {
+     "role": "ing_x:18",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_7_aten_unsqueeze_copy_default_113@0": {
+     "role": "ing_beta:18",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_8_aten_unsqueeze_copy_default_114@0": {
+     "role": "ing_decay:18",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_9_aten_view_copy_default_345@0": {
+     "role": "ing_v:18",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_10_aten_div_tensor_63@0": {
+     "role": "ing_k:18",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_11_aten_permute_copy_default_268@0": {
+     "role": "kv_v:19",
+     "dims": [
+      1,
+      4,
+      16,
+      256
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "output_order_12_aten_permute_copy_default_269@0": {
+     "role": "kv_k:19",
+     "dims": [
+      1,
+      4,
+      256,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "output_order_13_aten_permute_copy_default_283@0": {
+     "role": "ing_x:20",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_14_aten_unsqueeze_copy_default_128@0": {
+     "role": "ing_beta:20",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_15_aten_unsqueeze_copy_default_129@0": {
+     "role": "ing_decay:20",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_16_aten_view_copy_default_376@0": {
+     "role": "ing_v:20",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_17_aten_div_tensor_68@0": {
+     "role": "ing_k:20",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_18_aten_permute_copy_default_297@0": {
+     "role": "ing_x:21",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_19_aten_unsqueeze_copy_default_133@0": {
+     "role": "ing_beta:21",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_20_aten_unsqueeze_copy_default_134@0": {
+     "role": "ing_decay:21",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_21_aten_view_copy_default_395@0": {
+     "role": "ing_v:21",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_22_aten_div_tensor_72@0": {
+     "role": "ing_k:21",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_23_aten_add_tensor_143@0": {
+     "role": "hidden_out",
+     "dims": [
+      1,
+      16,
+      2560
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    }
+   }
+  },
+  {
+   "shard": 6,
+   "inputs": {
+    "input_0_args_54@0": {
+     "role": "state_rec:22",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_1_args_56@0": {
+     "role": "state_rec:24",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_2_args_57@0": {
+     "role": "state_rec:25",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_3_args_22@0": {
+     "role": "state_conv:22",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_4_args_150@0": {
+     "role": "ing_x:22",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_5_args_151@0": {
+     "role": "ing_k:22",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_6_args_152@0": {
+     "role": "ing_v:22",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_7_args_153@0": {
+     "role": "ing_beta:22",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_8_args_154@0": {
+     "role": "ing_decay:22",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_9_args_24@0": {
+     "role": "state_conv:24",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_10_args_155@0": {
+     "role": "ing_x:24",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_11_args_156@0": {
+     "role": "ing_k:24",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_12_args_157@0": {
+     "role": "ing_v:24",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_13_args_158@0": {
+     "role": "ing_beta:24",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_14_args_159@0": {
+     "role": "ing_decay:24",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_15_args_25@0": {
+     "role": "state_conv:25",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_16_args_160@0": {
+     "role": "ing_x:25",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_17_args_161@0": {
+     "role": "ing_k:25",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_18_args_162@0": {
+     "role": "ing_v:25",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_19_args_163@0": {
+     "role": "ing_beta:25",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_20_args_164@0": {
+     "role": "ing_decay:25",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_21_atten_mask@0": {
+     "role": "mask",
+     "dims": [
+      1,
+      1,
+      16,
+      1024
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_22_args_186@0": {
+     "role": "conv_idx_prev",
+     "dims": [
+      3
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_23_args_64@0": {
+     "role": "valid_prev",
+     "dims": [
+      1,
+      16,
+      1,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_24_aten_select_copy_int@0": {
+     "role": "link:209",
+     "dims": [
+      16,
+      32
+     ],
+     "dtype": "QNN_DATATYPE_FLOAT_32"
+    },
+    "input_25_aten_select_copy_int_1@0": {
+     "role": "link:210",
+     "dims": [
+      16,
+      32
+     ],
+     "dtype": "QNN_DATATYPE_FLOAT_32"
+    },
+    "input_26_llama_fallback_default_5@0": {
+     "role": "hidden_in",
+     "dims": [
+      1,
+      16,
+      2560
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_27_args_185@0": {
+     "role": "valid_cur",
+     "dims": [
+      1,
+      16,
+      1,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_28_args_55@0": {
+     "role": "kv_v:23",
+     "dims": [
+      1,
+      4,
+      1008,
+      256
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "input_29_args_23@0": {
+     "role": "kv_k:23",
+     "dims": [
+      1,
+      4,
+      256,
+      1008
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    }
+   },
+   "outputs": {
+    "output_order_0_aten__to_copy_default@0": {
+     "role": "state_conv:22",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_1_aten__to_copy_default_20@0": {
+     "role": "state_conv:24",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_2_aten__to_copy_default_21@0": {
+     "role": "state_conv:25",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_3_aten_cat_default_99@0": {
+     "role": "state_rec:22",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_4_aten_cat_default_109@0": {
+     "role": "state_rec:24",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_5_aten_cat_default_113@0": {
+     "role": "state_rec:25",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_6_aten_permute_copy_default_311@0": {
+     "role": "ing_x:22",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_7_aten_unsqueeze_copy_default_138@0": {
+     "role": "ing_beta:22",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_8_aten_unsqueeze_copy_default_139@0": {
+     "role": "ing_decay:22",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_9_aten_view_copy_default_414@0": {
+     "role": "ing_v:22",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_10_aten_div_tensor_76@0": {
+     "role": "ing_k:22",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_11_aten_permute_copy_default_323@0": {
+     "role": "kv_v:23",
+     "dims": [
+      1,
+      4,
+      16,
+      256
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "output_order_12_aten_permute_copy_default_324@0": {
+     "role": "kv_k:23",
+     "dims": [
+      1,
+      4,
+      256,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "output_order_13_aten_permute_copy_default_338@0": {
+     "role": "ing_x:24",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_14_aten_unsqueeze_copy_default_153@0": {
+     "role": "ing_beta:24",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_15_aten_unsqueeze_copy_default_154@0": {
+     "role": "ing_decay:24",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_16_aten_view_copy_default_445@0": {
+     "role": "ing_v:24",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_17_aten_div_tensor_81@0": {
+     "role": "ing_k:24",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_18_aten_permute_copy_default_352@0": {
+     "role": "ing_x:25",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_19_aten_unsqueeze_copy_default_158@0": {
+     "role": "ing_beta:25",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_20_aten_unsqueeze_copy_default_159@0": {
+     "role": "ing_decay:25",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_21_aten_view_copy_default_464@0": {
+     "role": "ing_v:25",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_22_aten_div_tensor_85@0": {
+     "role": "ing_k:25",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_23_aten_add_tensor_169@0": {
+     "role": "hidden_out",
+     "dims": [
+      1,
+      16,
+      2560
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    }
+   }
+  },
+  {
+   "shard": 7,
+   "inputs": {
+    "input_0_args_58@0": {
+     "role": "state_rec:26",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_1_args_60@0": {
+     "role": "state_rec:28",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_2_args_61@0": {
+     "role": "state_rec:29",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_3_args_26@0": {
+     "role": "state_conv:26",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_4_args_165@0": {
+     "role": "ing_x:26",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_5_args_166@0": {
+     "role": "ing_k:26",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_6_args_167@0": {
+     "role": "ing_v:26",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_7_args_168@0": {
+     "role": "ing_beta:26",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_8_args_169@0": {
+     "role": "ing_decay:26",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_9_args_28@0": {
+     "role": "state_conv:28",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_10_args_170@0": {
+     "role": "ing_x:28",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_11_args_171@0": {
+     "role": "ing_k:28",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_12_args_172@0": {
+     "role": "ing_v:28",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_13_args_173@0": {
+     "role": "ing_beta:28",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_14_args_174@0": {
+     "role": "ing_decay:28",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_15_args_29@0": {
+     "role": "state_conv:29",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_16_args_175@0": {
+     "role": "ing_x:29",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_17_args_176@0": {
+     "role": "ing_k:29",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_18_args_177@0": {
+     "role": "ing_v:29",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_19_args_178@0": {
+     "role": "ing_beta:29",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_20_args_179@0": {
+     "role": "ing_decay:29",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_21_atten_mask@0": {
+     "role": "mask",
+     "dims": [
+      1,
+      1,
+      16,
+      1024
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_22_args_186@0": {
+     "role": "conv_idx_prev",
+     "dims": [
+      3
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_23_args_64@0": {
+     "role": "valid_prev",
+     "dims": [
+      1,
+      16,
+      1,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_24_aten_select_copy_int@0": {
+     "role": "link:209",
+     "dims": [
+      16,
+      32
+     ],
+     "dtype": "QNN_DATATYPE_FLOAT_32"
+    },
+    "input_25_aten_select_copy_int_1@0": {
+     "role": "link:210",
+     "dims": [
+      16,
+      32
+     ],
+     "dtype": "QNN_DATATYPE_FLOAT_32"
+    },
+    "input_26_llama_fallback_default_6@0": {
+     "role": "hidden_in",
+     "dims": [
+      1,
+      16,
+      2560
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_27_args_185@0": {
+     "role": "valid_cur",
+     "dims": [
+      1,
+      16,
+      1,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_28_args_59@0": {
+     "role": "kv_v:27",
+     "dims": [
+      1,
+      4,
+      1008,
+      256
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "input_29_args_27@0": {
+     "role": "kv_k:27",
+     "dims": [
+      1,
+      4,
+      256,
+      1008
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    }
+   },
+   "outputs": {
+    "output_order_0_aten__to_copy_default@0": {
+     "role": "state_conv:26",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_1_aten__to_copy_default_23@0": {
+     "role": "state_conv:28",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_2_aten__to_copy_default_24@0": {
+     "role": "state_conv:29",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_3_aten_cat_default_117@0": {
+     "role": "state_rec:26",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_4_aten_cat_default_127@0": {
+     "role": "state_rec:28",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_5_aten_cat_default_131@0": {
+     "role": "state_rec:29",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_6_aten_permute_copy_default_366@0": {
+     "role": "ing_x:26",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_7_aten_unsqueeze_copy_default_163@0": {
+     "role": "ing_beta:26",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_8_aten_unsqueeze_copy_default_164@0": {
+     "role": "ing_decay:26",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_9_aten_view_copy_default_483@0": {
+     "role": "ing_v:26",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_10_aten_div_tensor_89@0": {
+     "role": "ing_k:26",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_11_aten_permute_copy_default_378@0": {
+     "role": "kv_v:27",
+     "dims": [
+      1,
+      4,
+      16,
+      256
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "output_order_12_aten_permute_copy_default_379@0": {
+     "role": "kv_k:27",
+     "dims": [
+      1,
+      4,
+      256,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "output_order_13_aten_permute_copy_default_393@0": {
+     "role": "ing_x:28",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_14_aten_unsqueeze_copy_default_178@0": {
+     "role": "ing_beta:28",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_15_aten_unsqueeze_copy_default_179@0": {
+     "role": "ing_decay:28",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_16_aten_view_copy_default_514@0": {
+     "role": "ing_v:28",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_17_aten_div_tensor_94@0": {
+     "role": "ing_k:28",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_18_aten_permute_copy_default_407@0": {
+     "role": "ing_x:29",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_19_aten_unsqueeze_copy_default_183@0": {
+     "role": "ing_beta:29",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_20_aten_unsqueeze_copy_default_184@0": {
+     "role": "ing_decay:29",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_21_aten_view_copy_default_533@0": {
+     "role": "ing_v:29",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_22_aten_div_tensor_98@0": {
+     "role": "ing_k:29",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_23_aten_add_tensor_195@0": {
+     "role": "hidden_out",
+     "dims": [
+      1,
+      16,
+      2560
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    }
+   }
+  },
+  {
+   "shard": 8,
+   "inputs": {
+    "input_0_llama_fallback_default_7@0": {
+     "role": "hidden_in",
+     "dims": [
+      1,
+      16,
+      2560
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_1_args_30@0": {
+     "role": "state_conv:30",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_2_args_180@0": {
+     "role": "ing_x:30",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_3_args_186@0": {
+     "role": "conv_idx_prev",
+     "dims": [
+      3
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_4_args_181@0": {
+     "role": "ing_k:30",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_5_args_182@0": {
+     "role": "ing_v:30",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_6_args_183@0": {
+     "role": "ing_beta:30",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_7_args_184@0": {
+     "role": "ing_decay:30",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_8_args_62@0": {
+     "role": "state_rec:30",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "input_9_args_64@0": {
+     "role": "valid_prev",
+     "dims": [
+      1,
+      16,
+      1,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_10_args_185@0": {
+     "role": "valid_cur",
+     "dims": [
+      1,
+      16,
+      1,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_INT_32"
+    },
+    "input_11_aten_select_copy_int@0": {
+     "role": "link:209",
+     "dims": [
+      16,
+      32
+     ],
+     "dtype": "QNN_DATATYPE_FLOAT_32"
+    },
+    "input_12_aten_select_copy_int_1@0": {
+     "role": "link:210",
+     "dims": [
+      16,
+      32
+     ],
+     "dtype": "QNN_DATATYPE_FLOAT_32"
+    },
+    "input_13_args_31@0": {
+     "role": "kv_k:31",
+     "dims": [
+      1,
+      4,
+      256,
+      1008
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "input_14_args_63@0": {
+     "role": "kv_v:31",
+     "dims": [
+      1,
+      4,
+      1008,
+      256
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "input_15_atten_mask@0": {
+     "role": "mask",
+     "dims": [
+      1,
+      1,
+      16,
+      1024
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    }
+   },
+   "outputs": {
+    "output_order_0_aten__to_copy_default@0": {
+     "role": "state_conv:30",
+     "dims": [
+      1,
+      8192,
+      3
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_1_aten_cat_default_135@0": {
+     "role": "state_rec:30",
+     "dims": [
+      1,
+      32,
+      128,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_2_aten_permute_copy_default_421@0": {
+     "role": "ing_x:30",
+     "dims": [
+      1,
+      8192,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_3_aten_view_copy_default_552@0": {
+     "role": "ing_v:30",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_4_aten_div_tensor_102@0": {
+     "role": "ing_k:30",
+     "dims": [
+      1,
+      16,
+      32,
+      128
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_5_aten_unsqueeze_copy_default_188@0": {
+     "role": "ing_beta:30",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_6_aten_unsqueeze_copy_default_189@0": {
+     "role": "ing_decay:30",
+     "dims": [
+      1,
+      16,
+      32,
+      1
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    },
+    "output_order_7_aten_permute_copy_default_433@0": {
+     "role": "kv_v:31",
+     "dims": [
+      1,
+      4,
+      16,
+      256
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "output_order_8_aten_permute_copy_default_434@0": {
+     "role": "kv_k:31",
+     "dims": [
+      1,
+      4,
+      256,
+      16
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_8"
+    },
+    "output_order_9_aten_squeeze_copy_dims_168@0": {
+     "role": "logits",
+     "dims": [
+      1,
+      16,
+      248320
+     ],
+     "dtype": "QNN_DATATYPE_UFIXED_POINT_16"
+    }
+   }
+  }
+ ]
+}

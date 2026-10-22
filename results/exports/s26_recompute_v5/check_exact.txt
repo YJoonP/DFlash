@@ -1,0 +1,2 @@
+graph dump: {"pairs": 96, "group_equal": 384, "src_equal": 384, "src_diff": 0, "x_equal": 24, "x_diff": 0}
+context IO: 120 ingredient roles, 0 not u16 with equal in/out encoding; bytes {'inputs': 12632064, 'outputs': 12632064}

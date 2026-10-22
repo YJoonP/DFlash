@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "pid": 804244,
+  "thinking": true,
+  "started": "2026-10-13 01:04:12",
+  "current": "main_AR16_483",
+  "thermal": {
+    "soc_mC": 32400,
+    "battery_dC": 249,
+    "battery_pct": 91,
+    "charge_counter_uAh": 4585000,
+    "busy": []
+  },
+  "minimum_inter_run_rest_seconds": 60,
+  "tag": "main"
+}

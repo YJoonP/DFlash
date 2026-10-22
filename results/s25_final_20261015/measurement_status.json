@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "pid": 919076,
+  "thinking": true,
+  "started": "2026-10-15 14:20:20",
+  "current": "main_S16_483_run",
+  "thermal": {
+    "soc_mC": 26900,
+    "battery_dC": 221,
+    "battery_pct": 25,
+    "charge_counter_uAh": 1007765,
+    "busy": []
+  },
+  "minimum_inter_run_rest_seconds": 60,
+  "tag": "main"
+}

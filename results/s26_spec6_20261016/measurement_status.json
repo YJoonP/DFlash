@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "pid": 563977,
+  "thinking": true,
+  "started": "2026-10-16 22:24:36",
+  "current": "main_K16on_401_run",
+  "thermal": {
+    "soc_mC": 26600,
+    "battery_dC": 216,
+    "battery_pct": 100,
+    "charge_counter_uAh": 5000000,
+    "busy": []
+  },
+  "minimum_inter_run_rest_seconds": 60,
+  "tag": "main"
+}

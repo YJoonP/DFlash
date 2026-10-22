@@ -1,0 +1,13 @@
+off_g16 exit 0
+0.04.600.627 I [REPLAY] group=16 fed=128 next-token matches 126/127 first_mismatch_at=39 (0.700 s)
+on_g16 exit 0
+0.04.379.896 I [REPLAY] group=16 fed=128 next-token matches 126/127 first_mismatch_at=39 (0.684 s)
+off_g1 exit 0
+0.13.756.385 I [REPLAY] group=1 fed=128 next-token matches 126/127 first_mismatch_at=39 (10.048 s)
+off_g4 exit 0
+0.06.260.713 I [REPLAY] group=4 fed=128 next-token matches 126/127 first_mismatch_at=39 (2.586 s)
+off_g16 vs on_g16: 0 of 128 positions differ (logit fingerprint); first []
+off_g1 vs off_g4: 127 of 128 positions differ (logit fingerprint); first [1, 2, 3, 4, 5, 6]
+off_g1 vs off_g16: 127 of 128 positions differ (logit fingerprint); first [1, 2, 3, 4, 5, 6]
+committed state after the 2nd prompt call, layer 0: 0 of 524288 codes differ, max |diff| 0
+committed state after the 2nd prompt call, layer 1: 0 of 524288 codes differ, max |diff| 0

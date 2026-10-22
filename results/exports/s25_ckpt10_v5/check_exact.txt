@@ -1,0 +1,6 @@
+graph dump: {"commit_ops": 96, "head_ops": 96, "tail_ops": 96, "read_equal": 384, "read_diff": 0, "tail_equal": 384, "tail_diff": 0, "stored_equal": 384, "stored_diff": 0, "chain_ok": 384, "chain_bad": 0, "x_equal": 24, "x_diff": 0}
+context IO: 120 ingredient roles (u16), 0 with in/out dtype, shape, shard or (u16) encoding differing
+checkpoint outputs 96 (expected 96)
+checkpoint dtype/shape/encoding beyond tolerance: 0; within tolerance but not equal: 0
+export log: CUSTOM_STATE_ENC 768 lines, in != out 0; mode-2 prefill forced ['192']; exact counts {'pairs': 96, 'group_changed': 343, 'group_already': 41, 'kvbd_changed': 43, 'kvbd_already': 53, 'x_changed': 0, 'x_already': 24, 'one_enc_changed': 1059, 'one_enc_already': 477, 'rows_on_group_changed': 143, 'rows_on_group_already': 817, 'tail_already': 384}
+PASS

@@ -1,0 +1,5 @@
+s25_full32_w16_v5_ckpt10: 40 two-grid points
+   24  other (quantized_decomposed.dequantize_per_tensor.default None) scale diff (relative) 1.5e-07 .. 1.3e-03
+   16  attention K/V                            scale diff (relative) 7.8e-08 .. 6.8e-05
+exact pass: {'pairs': 96, 'group_changed': 343, 'group_already': 41, 'kvbd_changed': 43, 'kvbd_already': 53, 'x_changed': 0, 'x_already': 24, 'one_enc_changed': 1059, 'one_enc_already': 477, 'rows_on_group_changed': 143, 'rows_on_group_already': 817, 'tail_already': 384}
+PASS

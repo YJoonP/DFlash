@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "weight_block_size": 32,
+  "verify_width": 16,
+  "graph_logits_shapes": {
+    "kv_forward": [
+      [
+        1,
+        1,
+        248320
+      ]
+    ],
+    "prefill_forward": [
+      [
+        1,
+        16,
+        248320
+      ]
+    ]
+  },
+  "source": "compiled QNN context JSON + export recipe log"
+}

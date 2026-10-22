@@ -1,0 +1,17 @@
+{
+  "model": "z-lab/Qwen3.5-4B-DFlash",
+  "weight_bits": 4,
+  "activation_bits": 16,
+  "weight_block_size": 32,
+  "verify_width": 16,
+  "n_inject": 16,
+  "context_length": 1024,
+  "activation_margin": 2.0,
+  "threads": 8,
+  "calibration": "/data/whdgns/repos/QNN_Exporter/data/calib_specbench.json",
+  "calibration_sha256": "4918954761ed5ce3e63e953864f59bd7b2ccb0680f5dccfcb5ba36bd158775fd",
+  "hidden_dump": "/data/whdgns/fork_dflash/data/hidden_q35_4b_specbench39.pt",
+  "recipe_path": "/data/whdgns/fork_dflash/executorch/examples/qualcomm/oss_scripts/llama/static_llm_quant_recipe.py",
+  "recipe_sha256": "9a06f3b77bac5ef630ce2736a6f71a58b3c9fd1fc1fabfa312a2cd91802ad8b0",
+  "target_artifact": "/home/whdgns/qnn/fork_exe/artifacts/05_dflash/pte_target_full32_ar16_ctx1024_defermasked_se2_calibspec2_fp32fold"
+}
