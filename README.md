@@ -5,10 +5,26 @@
 > - **The hard part**: Qwen3.5 is a hybrid model (24 Gated DeltaNet layers + 8 attention layers). Its recurrent state cannot be rolled back like a KV cache when draft tokens are rejected.
 > - **Approach**: the final design *defers and recomputes* the accepted rows inside the next verify call. It is made bit-exact, and its NPU time was recovered by removing every quantization-grid mismatch.
 > - **Result (block size 16)**: S26 **58.3 tok/s, 2.90× autoregressive**; S25 **54.7 tok/s, 3.06×**. Recompute, checkpointed recompute and checkpoint-off all produce identical tokens.
+> - **In this repository**: the ExecuTorch changes (patches against c27baa8031), the DeltaNet HTP op package, export / check / measurement scripts and the raw device results. The C++ runner used on the phones is not included.
 
 이 문서는 2026-10-01 ~ 10-15 에 진행한 "Qwen3.5-4B target + DFlash draft" NPU 이식 작업의 정리입니다. 모든 DFlash 수치는 **b = 16** (검증 1회에 초안 16토큰)입니다.
 
 ---
+
+## 저장소 구성
+
+| 폴더 | 내용 |
+|---|---|
+| [`executorch/`](executorch/) | ExecuTorch(c27baa8031) 수정분. target v5 와 draft 의 패치(`patches/`)와 바뀐 파일 전문(`target_v5/`, `draft/`) |
+| [`op_package/`](op_package/) | DeltaNet HVX 커스텀 연산 패키지 소스와 빌드 스크립트 (재계산·ckpt10 용 `v1p/`, 저장 방식 용 `snapshot/`) |
+| [`scripts/`](scripts/) | export(`export/`), export 검사(`check/`), 기기 측정·요약(`device/`), 분석(`analysis/`) |
+| [`results/`](results/) | 최종 측정 원본: 실행별 json, 기기에서 실행한 명령, 요약표, 압축한 로그, export 설정과 검사 결과 |
+| [`tests/`](tests/) | CPU 검증: 지연 커밋 동등성, draft 동등성, 참조 추측 디코딩 루프 |
+| [`docs/`](docs/) | 상세 보고서 [`REPORT_20261016.md`](docs/REPORT_20261016.md), 시행착오 정리 [`TRIALS.md`](docs/TRIALS.md) |
+
+- 범위: 2026-10-16 최종본(v5)까지의 DFlash 작업입니다.
+- 기기에서 DFlash 를 실행하는 C++ 러너(MobiSpec.cpp 기반)는 연구실 비공개 저장소에 있어 넣지 않았습니다. 각 실행의 러너 명령과 환경 변수는 `results/*/*.command.txt` 에 그대로 있습니다.
+- 모델 바이너리(context binary, target 하나에 약 3.7 GB)는 넣지 않았습니다.
 
 ## 1. 구성
 
@@ -21,7 +37,7 @@
 | 실행 | ExecuTorch QNN 백엔드(QAIRT 2.49), HTP context binary. target 은 9개 샤드 |
 | DeltaNet 연산 | HVX 커스텀 연산(op package). 16bit 정수 상태로 행 단위 델타 규칙 갱신 |
 | 기기 | Galaxy S26 Ultra (SM8850, Hexagon v81), Galaxy S25 (SM8750, Hexagon v79) |
-| 러너 | MobiSpec.cpp 기반 C++ 러너. zero copy(등록 메모리), 샤드 메모리 고정, NPU 출력의 16bit argmax |
+| 러너 | MobiSpec.cpp 기반 C++ 러너 (이 저장소에는 없음). zero copy(등록 메모리), 샤드 메모리 고정, NPU 출력의 16bit argmax |
 
 ## 2. 문제: DeltaNet 상태는 되돌릴 수 없다
 
@@ -152,6 +168,16 @@
 | k 복제 제거 | 마스크 DeltaNet 커널이 16헤드 k 를 직접 읽게 함. 복제·정규화 절반, 재료 k 절반 |
 | 커밋할 행이 없는 경로 | 정확히 10개 수락 시 체크포인트를 쓰지 않거나, 커널에 빠른 경로 추가 |
 
+## 8. 다시 만들기
+
+1. ExecuTorch c27baa8031 에 `executorch/patches/target_v5.patch` 를 적용하고 QNN 백엔드(QAIRT 2.49)를 빌드합니다. draft 용으로는 다른 폴더에 `draft.patch` 를 적용합니다.
+2. 커스텀 연산 패키지를 빌드합니다: `HEX_ARCH=v81 DELTA_INT16=1 DELTA_INT16_PREFILL=1 bash op_package/v1p/qhpi/build.sh <출력>` (S25 는 `v79`).
+3. target 을 export 하고 검사합니다: `ART_DIR=<출력> CKPT_ROW=10 bash scripts/export/export_target_v5.sh SM8850 full32 16`, 이어서 `scripts/check/check_v3.py <출력>` 등. 메모리 100 GiB 이상이 필요합니다.
+4. draft 를 export 합니다: `scripts/export/export_draft.sh SM8850 16 1024`.
+5. 기기 측정 절차와 요약은 `scripts/device/` 에 있습니다. 공개한 요약 스크립트를 `results/` 의 원본에 다시 돌리면 기록된 요약표와 똑같이 나옵니다.
+
+자세한 설명은 각 폴더의 README 에 있습니다.
+
 ---
 
-*참고: DFlash — z-lab/dflash, Qwen3.5 — Qwen/Qwen3.5-4B, z-lab/Qwen3.5-4B-DFlash, Spec-Bench (Xia et al., 2024), ExecuTorch QNN backend.*
+*참고: DFlash — z-lab/dflash, Qwen3.5 — Qwen/Qwen3.5-4B, z-lab/Qwen3.5-4B-DFlash, Spec-Bench (Xia et al., 2024), ExecuTorch QNN backend. draft export 경로는 [QNN_Exporter](https://github.com/mkjsym/QNN_Exporter) 의 Qwen3-4B DFlash export 를 바탕으로 했습니다.*
