@@ -1,0 +1,25 @@
+{
+  "dim": 2560,
+  "hidden_dim": 9216,
+  "n_heads": 32,
+  "head_dim": 128,
+  "n_kv_heads": 8,
+  "n_layers": 6,
+  "norm_eps": 1e-6,
+  "rope_theta": 10000000.0,
+  "use_scaled_rope": false,
+  "vocab_size": 248320,
+  "use_hf_rope": true,
+  "partial_rotary_factor": 1.0,
+  "attention_qkv_bias": false,
+  "use_qk_norm": true,
+  "qk_norm_before_rope": true,
+  "use_q_gate": false,
+  "rms_norm_add_unit_offset": false,
+  "attention_kwargs": {
+    "dflash_causal_layers": [0, 1, 2, 3, 4],
+    "dflash_target_layer_ids": [1, 5, 9, 13, 17, 21, 25, 29],
+    "dflash_block_size": 16,
+    "dflash_mask_token_id": 248077
+  }
+}
