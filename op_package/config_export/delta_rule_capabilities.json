@@ -1,0 +1,1 @@
+{"implementation":"qhpi","independent_head_workspace":true,"state_dtypes":["float32","uint16"],"state16_workspace_op":true,"decode16_unique_op":true,"requires_output_order_runtime":true,"state16_masked_op":true,"masked_valid_dtype":"int32","state16_snapshots_op":true,"snapshots_workspace_v2":true}
